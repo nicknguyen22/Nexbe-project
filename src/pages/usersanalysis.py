@@ -832,8 +832,7 @@ def trend_chart(data):
                     ))
 
     # Add figure layout
-    fig.update_layout(title_text=(f'<span style="font-size: 18px;"> Latest Electricity\
-        Usage Trend </span>'),
+    fig.update_layout(title_text=(f'<span style="font-size: 18px;"> Latest Electricity Usage Trend </span>'),
         hovermode='x unified',
         plot_bgcolor='#FFFFFF',
         xaxis_title = None,
@@ -917,8 +916,7 @@ def group_chart1(data):
 
     fig2.update_layout(
         plot_bgcolor = '#FFFFFF',
-        title_text=(f'<span style="font-size: 18px; "> Daily Electricity \
-            Consumption and Temperature</span>'),
+        title_text=(f'<span style="font-size: 18px; "> Daily Electricity Consumption and Temperature</span>'),
         hovermode='x unified',
         xaxis4 = dict(tickangle = 0, tickfont =dict(size=10),showticklabels=True, 
             dtick ='M1', tickformat="%d\n%b%Y",type="date"),
@@ -951,8 +949,7 @@ def detail_chart(data,clk_data):
         # Add figure layout
         sel_date = str(clk_date).split(' ',1)[0]
         fig3.update_layout(height=376,
-            title_text=(f'<span style="font-size: 18px;"> Electricity Consumption \
-                on {sel_date} </span>'),
+            title_text=(f'<span style="font-size: 18px;"> Electricity Consumption on {sel_date} </span>'),
             hovermode='x unified',
             plot_bgcolor='#FFFFFF',
             xaxis_title = None,
@@ -977,8 +974,7 @@ def detail_chart(data,clk_data):
         # Add figure layout
         sel_date = str(clk_date).split(' ',1)[0]
         fig3.update_layout(height=376,
-            title_text=(f'<span style="font-size: 18px;"> Electricity Consumption \
-                on {sel_date} </span>'),
+            title_text=(f'<span style="font-size: 18px;"> Electricity Consumption on {sel_date} </span>'),
             hovermode='x unified',
             plot_bgcolor='#FFFFFF',
             xaxis_title = None,
