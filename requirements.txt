@@ -1,0 +1,6 @@
+dash==2.7.0
+dash_bootstrap_components==1.2.1
+numpy==1.22.3
+pandas==1.5.1
+gunicorn
+dash-tools
