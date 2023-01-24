@@ -813,8 +813,9 @@ def trend_chart(data):
     df_daily = daily_df(data)
     fig = px.scatter(df_daily, x = 'Date', y= 'Consumption(KWh)',opacity=0.5, 
         color_discrete_sequence=[COLR1],
-        trendline='lowess',trendline_options=dict(frac=0.08), 
-        trendline_color_override=COLR1)
+        # trendline='lowess',trendline_options=dict(frac=0.08), 
+        # trendline_color_override=COLR1
+        )
 
     # Add figure layout
     fig.update_layout(title_text=(f'<span style="font-size: 18px;"> Latest Electricity\
