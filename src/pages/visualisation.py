@@ -500,7 +500,7 @@ def daily_charts(df3,df4,clk_date):
 # ------------------------------------------------------------------------------
 # Layout
 layout = dbc.Container([
-    html.H4("Electricity Generation and Carbon Footprint", style={'textAlign':'center'}),
+    html.H4("Electricity Generation and Carbon Footprint in New Zealand", style={'textAlign':'center'}),
     html.Br(),html.Br(),
     dbc.Row([
         dbc.Col(dbc.Card(dcc.Graph(id='overview-graph', figure=main_chart())),
