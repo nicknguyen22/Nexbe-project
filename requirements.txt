@@ -5,4 +5,5 @@ pandas==1.5.1
 gunicorn
 dash-tools
 datetime
+statsmodels
 

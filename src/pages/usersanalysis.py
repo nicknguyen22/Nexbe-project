@@ -9,6 +9,8 @@ from datetime import timedelta
 import pandas as pd
 import sqlite3
 import numpy as np
+import statsmodels.api as sm
+
 
 dash.register_page(__name__,path='/e_usage')
 # ------------------------------------------------------------------------------
@@ -811,11 +813,23 @@ def render_content(act_tab):
 def trend_chart(data):
     # Prepare dataframe
     df_daily = daily_df(data)
-    fig = px.scatter(df_daily, x = 'Date', y= 'Consumption(KWh)',opacity=0.5, 
-        color_discrete_sequence=[COLR1],
-        # trendline='lowess',trendline_options=dict(frac=0.08), 
-        # trendline_color_override=COLR1
-        )
+    lowess = sm.nonparametric.lowess(df_daily['Consumption(KWh)'], 
+        df_daily['Date'], frac=0.08)
+    
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=df_daily['Date'], y=df_daily['Consumption(KWh)'],
+                    mode='markers',
+                    name='Consumption',
+                    hovertemplate = '%{y:,.3f} KWh',
+                    opacity=0.5,
+                    marker=dict(size=4, color=COLR1)
+                    ))
+    fig.add_trace(go.Scatter(x=df_daily['Date'], y=lowess[:,1],
+                    mode='lines',
+                    name='Trendline',
+                    hovertemplate = '%{y:,.3f} KWh',
+                    line=dict(color=COLR1)
+                    ))
 
     # Add figure layout
     fig.update_layout(title_text=(f'<span style="font-size: 18px;"> Latest Electricity\
