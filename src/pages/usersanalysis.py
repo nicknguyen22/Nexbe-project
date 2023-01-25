@@ -535,7 +535,7 @@ def pattern_review(wddf,wedf):
 
     fig.add_trace(go.Scatter(
         name='WD Pattern', x=wddf['Time'], y=wddf['Pattern'],
-        mode='lines', fill='tozeroy', fillcolor= f'rgba{(*hex_to_rgb(COLR6), 0.05)}',
+        mode='lines', fill='tozeroy', fillcolor= f'rgba{(*hex_to_rgb(COLR6), 0.1)}',
         line=dict(width = 0, color=COLR6)
     ),row =1,col =1)
 
@@ -548,7 +548,7 @@ def pattern_review(wddf,wedf):
 
     fig.add_trace(go.Scatter(
         name='WE Pattern', x=wedf['Time'], y=wedf['Pattern'],
-        mode='lines', fill='tozeroy', fillcolor= f'rgba{(*hex_to_rgb(COLR3), 0.05)}',
+        mode='lines', fill='tozeroy', fillcolor= f'rgba{(*hex_to_rgb(COLR3), 0.1)}',
         line=dict(width = 0, color=COLR3)
     ),row =2,col =1)
 
@@ -1265,16 +1265,16 @@ def side_content(fhour,hcwd_p,hcwe_p,lcwd_p,lcwe_p):
                 'font-size':17,'font-weight':'500'
                 }),
             dbc.Row([
-                dbc.Col(html.P('Pattern :',style={'font-size':17,'textAlign':'right'}),
-                    width=5),
+                dbc.Col(html.P('Pattern:',style={'font-size':16,'textAlign':'right'}),
+                    width=4),
                 dbc.Col(html.H5(f'{total_ci:,.2f} kgCO2',style={'color':COLR6,
-                    'textAlign':'left'}),width=7),
+                    'textAlign':'left'}),width=8),
             ]),  
             dbc.Row([
-                dbc.Col(html.P('Proposal :',style={'font-size':17,'textAlign':'right'}),
-                    width=5),
+                dbc.Col(html.P('Proposal:',style={'font-size':16,'textAlign':'right'}),
+                    width=4),
                 dbc.Col(html.H5(f'{total_ci_p:,.2f} kgCO2',style={'color':COLR7,
-                    'textAlign':'left'}),width=7),
+                    'textAlign':'left'}),width=8),
             ]),  
             ],style={'padding':'20px'}),
         html.Br(),
@@ -1283,16 +1283,16 @@ def side_content(fhour,hcwd_p,hcwe_p,lcwd_p,lcwe_p):
                 'font-size':17,'font-weight':'500'
                 }),
             dbc.Row([
-                dbc.Col(html.P('Pattern :',style={'font-size':17,'textAlign':'right'}),
-                    width=5),
+                dbc.Col(html.P('Pattern:',style={'font-size':16,'textAlign':'right'}),
+                    width=4),
                 dbc.Col(html.H5(f'{total_con:,.2f} $NZ',style={'color':COLR6,
-                    'textAlign':'left'}),width=7),
+                    'textAlign':'left'}),width=8),
             ]),  
             dbc.Row([
-                dbc.Col(html.P('Proposal :',style={'font-size':17,'textAlign':'right'}),
-                    width=5),
+                dbc.Col(html.P('Proposal:',style={'font-size':16,'textAlign':'right'}),
+                    width=4),
                 dbc.Col(html.H5(f'{total_con_p:,.2f} $NZ',style={'color':COLR1,
-                    'textAlign':'left'}),width=7),
+                    'textAlign':'left'}),width=8),
             ]),  
             ],style={'padding':'20px'}),
         html.Br(),
