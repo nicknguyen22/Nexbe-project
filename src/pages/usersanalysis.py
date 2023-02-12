@@ -4,7 +4,6 @@ from plotly.subplots import make_subplots
 import dash_bootstrap_components as dbc
 import plotly.graph_objects as go
 import plotly.express as px
-import os
 from datetime import timedelta
 import pandas as pd
 import sqlite3
@@ -23,8 +22,6 @@ LC_WD = 129
 LC_WE = 52
 
 # Current working directory
-# WKD = '/Users/hieunguyen/Desktop/Nexbe/Code/DashApp'
-WKD = os.getcwd()
 
 #Colors 
 COLR1 = '#E74E1C' # Orange
@@ -144,7 +141,7 @@ tp_time = {
 # Data
 
 # Database connection
-nxb = sqlite3.connect(WKD+'/database/nexbe.db',check_same_thread=False)
+nxb = sqlite3.connect('database/nexbe.db',check_same_thread=False)
 ccweather = pd.read_sql_query('SELECT * FROM ccweather',nxb)
 ccweather['Date(NZST)'] = pd.to_datetime(ccweather['Date(NZST)'])
 

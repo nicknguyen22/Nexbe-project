@@ -6,12 +6,11 @@ import plotly.graph_objects as go
 from datetime import date
 import pandas as pd
 import sqlite3
-import os
+
 
 dash.register_page(__name__,path='/')
 # ------------------------------------------------------------------------------
 # Variables
-WKD = os.getcwd()
 
 #Colors 
 COLR1 = '#E74E1C' # Orange
@@ -35,7 +34,7 @@ CWIND = '#ffeac9'
 # ------------------------------------------------------------------------------
 # Data preparation
 
-nxb = sqlite3.connect(WKD+'/database/nexbe.db')
+nxb = sqlite3.connect('database/nexbe.db')
 
 # loading data from database
 yr_ovr = pd.read_sql_query('SELECT * FROM viz_yr_ems_ov',nxb)
@@ -76,7 +75,6 @@ def check_fuel(data):
 
 # Function for first overview chart
 def main_chart():
-    print(f'This is CWD {os.getcwd()}')
     year_chosen = [2003,2022]
     df = yr_ovr[(yr_ovr['Year']>=year_chosen[0])&(yr_ovr['Year']<=year_chosen[1])]
     df2 = yr_elc[(yr_elc['Year']>=year_chosen[0])&(yr_elc['Year']<=year_chosen[1])]
@@ -166,9 +164,9 @@ def main_chart():
         legend=dict(orientation='h',yanchor='top',y=-0.1,xanchor='left',x=0)
         )
     fig.update_yaxes(title_text='Elec.Generated(GWh)', title_font=dict(size=12, 
-        color=CCOAL), secondary_y=False)
+        color=COLR1), secondary_y=False)
     fig.update_yaxes(title_text='Emission (KtCO2)', title_font=dict(size=12,
-    color=COLR3),tickformat= ',.1s',secondary_y=True)
+    color=COLR7),tickformat= ',.1s',secondary_y=True)
 
     return fig
 
