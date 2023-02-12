@@ -343,7 +343,7 @@ def indicator_cards(gen_df,ci_df,ems_df):
         dbc.Card([
             dbc.CardBody([
                 html.H6('Total Generation',style={'textAlign':'center','font-size':15}),
-                html.H4(f"{(gen_df['Generation(MWh)'].sum()/1000):,.3f} GWh",style={'textAlign':'center',
+                html.H5(f"{(gen_df['Generation(MWh)'].sum()/1000):,.3f} GWh",style={'textAlign':'center',
                     'color':COLR1})
                 ])
         ]),
@@ -353,7 +353,7 @@ def indicator_cards(gen_df,ci_df,ems_df):
         dbc.Card([
             dbc.CardBody([
                 html.H6('Avg. Carbon Intensity',style={'textAlign':'center','font-size':15}),
-                html.H4(f"{ci_df['Carbon_Intensity(g/KWh)'].mean():.3f} g/KWh",style={'textAlign':'center',
+                html.H5(f"{ci_df['Carbon_Intensity(g/KWh)'].mean():.3f} g/KWh",style={'textAlign':'center',
                     'color':COLR5})
                 ])
         ]),
@@ -363,7 +363,7 @@ def indicator_cards(gen_df,ci_df,ems_df):
         dbc.Card([
             dbc.CardBody([
                 html.H6('Total Emission',style={'textAlign':'center','font-size':15}),
-                html.H4(f"{(ems_df['Emission(tCO2)'].sum())/1000:.3f} KtCO2",style={'textAlign':'center',
+                html.H5(f"{(ems_df['Emission(tCO2)'].sum())/1000:.3f} KtCO2",style={'textAlign':'center',
                     'color':COLR7})
                 ])
         ])
